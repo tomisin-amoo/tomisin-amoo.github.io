@@ -1,0 +1,314 @@
+/* =========================================
+   Global Styles & Typography
+   ========================================= */
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', 'Lato', sans-serif;
+  font-size: 16px;
+  color: #333;
+  background-color: #fff;
+}
+
+h1, h2, h3, h4, h5 {
+  font-weight: 700;
+  margin-top: 0;
+}
+
+p {
+  margin: 0 0 15px;
+  line-height: 1.6;
+}
+
+a {
+  color: #007bff;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+/* =========================================
+   Sidebar Navigation
+   ========================================= */
+#navbar-custom {
+  width: 220px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  background-color: #222;
+  overflow: hidden;
+  z-index: 9999;
+}
+
+body {
+  margin-left: 220px; /* push content away from sidebar */
+}
+
+#navbar-custom .container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 20px 15px;
+}
+
+.navbar-header { margin-bottom: 15px; }
+
+.navbar-custom .logo {
+  max-height: 40px;
+  margin: 10px auto;
+  display: block;
+}
+
+#main-navbar ul {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.navbar-custom .nav > li > a {
+  color: #fff;
+  font-size: 14px; 
+  font-weight: 600;
+  padding: 8px 12px;
+  transition: color 0.3s, transform 0.2s;
+}
+.navbar-custom .nav > li > a:hover,
+.navbar-custom .nav > li > a:focus {
+  color: #00bcd4;
+  transform: translateX(5px);
+}
+
+/* Responsive sidebar collapse */
+@media (max-width: 768px) {
+  #navbar-custom {
+    width: 100%;
+    height: auto;
+    position: relative;
+    padding: 10px 0;
+  }
+  #main-navbar ul {
+    flex-direction: row;
+    justify-content: center;
+  }
+  .navbar-custom .nav > li { margin: 0 10px; }
+}
+
+/* =========================================
+   Hero Section
+   ========================================= */
+#home {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: #f5f5f5;
+  padding: 0 20px;
+}
+
+#home .intro-sub {
+  font-size: 20px;
+  font-weight: 500;
+  margin-bottom: 15px;
+  color: #555;
+}
+
+#home h1 {
+  font-size: 40px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+#home p {
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 25px;
+  color: #666;
+}
+
+#home .social-icons {
+  margin-top: 15px;
+}
+#home .social-icons ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+#home .social-icons ul li {
+  display: inline-block;
+  margin: 0 10px;
+}
+#home .social-icons a {
+  font-size: 20px;
+  color: #00bcd4;
+  transition: color 0.3s;
+}
+#home .social-icons a:hover { color: #007bff; }
+
+/* Hero Photo */
+.hero-photo {
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  margin-bottom: 20px;
+  object-fit: cover;
+}
+
+/* Hero Buttons */
+.hero-buttons {
+  margin: 20px 0;
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+}
+.hero-buttons .btn {
+  padding: 10px 20px;
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background 0.3s ease;
+}
+.hero-buttons .btn-primary { background: #00bcd4; color: #fff; }
+.hero-buttons .btn-primary:hover { background: #0097a7; }
+.hero-buttons .btn-secondary { background: #0077b5; color: #fff; }
+.hero-buttons .btn-secondary:hover { background: #005582; }
+.hero-buttons .btn-github { background: #333; color: #fff; }
+.hero-buttons .btn-github:hover { background: #000; }
+
+/* =========================================
+   Sections
+   ========================================= */
+section { padding: 60px 0; }
+
+.section-title {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+/* =========================================
+   Resume / Experience
+   ========================================= */
+.resume-item {
+  margin-bottom: 30px;
+  padding: 20px;
+  background: #f8f8f8;
+  border-left: 4px solid #00bcd4;
+}
+.resume-item h4 { margin-bottom: 5px; font-size: 18px; }
+.resume-item .company { font-weight: 500; font-size: 16px; color: #555; }
+
+/* =========================================
+   Skills
+   ========================================= */
+.skills-section {
+  background: #fff;
+  padding: 60px 0;
+}
+
+.skill-chart h3 {
+  font-size: 20px;
+  font-weight: 600;
+  margin: 30px 0 20px;
+  text-transform: uppercase;
+  color: #333;
+}
+
+.skill-progress { margin-bottom: 20px; }
+
+.skill-title {
+  display: flex;
+  align-items: center;
+  font-size: 15px;
+  font-weight: 500;
+  margin-bottom: 8px;
+  color: #444;
+}
+.skill-title i {
+  margin-right: 8px;
+  font-size: 16px;
+  color: #00bcd4;
+}
+
+.progress {
+  height: 8px;
+  background-color: #eee;
+  border-radius: 4px;
+  overflow: hidden;
+}
+.progress-bar {
+  height: 8px;
+  background-color: #00bcd4;
+  width: 0;
+  border-radius: 4px;
+  transition: width 1.5s ease-in-out;
+}
+
+/* =========================================
+   Projects
+   ========================================= */
+.project-card {
+  background: #fff;
+  border: 1px solid #ddd;
+  padding: 20px;
+  margin-bottom: 20px;
+  transition: box-shadow 0.3s;
+}
+.project-card:hover { box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+.project-card h4 { margin-bottom: 10px; }
+
+/* =========================================
+   Footer
+   ========================================= */
+.footer-wrapper {
+  background: #222;
+  color: #aaa;
+  padding: 20px 0;
+  font-size: 14px;
+}
+.footer-wrapper a { color: #00bcd4; }
+
+/* =========================================
+   Scroll-Up Button
+   ========================================= */
+.scroll-up {
+  bottom: 20px;
+  position: fixed;
+  right: 20px;
+  z-index: 999;
+  display: none;
+}
+.scroll-up.visible { display: block; }
+.scroll-up a {
+  background: #00bcd4;
+  border-radius: 50%;
+  color: #fff;
+  display: block;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  width: 40px;
+}
+.scroll-up a:hover { background: #0097a7; }
+
+/* =========================================
+   Profile Photo (About Section)
+   ========================================= */
+.profile-photo {
+  width: 250px;
+  height: auto;
+  border-radius: 8px;
+  object-fit: cover;
+  display: block;
+  margin: 0 auto 20px;
+}
+@media (max-width: 768px) {
+  .profile-photo { width: 180px; }
+}
