@@ -52,16 +52,20 @@ p { margin: 0 0 1rem 0; }
   background: var(--black);
   color: #fff;
   flex-shrink: 0;
-  height: 100vh;
-  position: sticky;
-  top: 0;
   display: flex;
   flex-direction: column;
   padding: 20px 14px;
 }
 
-#navbar-custom .navbar-header { margin-bottom: 14px; text-align: center; }
-#navbar-custom .logo { display: block; max-width: 140px; margin: 0 auto; }
+#navbar-custom .navbar-header { 
+  margin-bottom: 14px; 
+  text-align: center; 
+}
+#navbar-custom .logo { 
+  display: block; 
+  max-width: 140px; 
+  margin: 0 auto; 
+}
 
 #main-navbar ul {
   list-style: none;
@@ -71,26 +75,40 @@ p { margin: 0 0 1rem 0; }
   flex-direction: column;
   gap: 10px;
 }
-
 #main-navbar a {
   display: block;
   color: #fff;
   font-weight: 600;
   padding: 8px 10px;
   border-radius: 4px;
+  transition: transform .18s ease, color .18s ease;
 }
-
 #main-navbar a:hover,
 #main-navbar a:focus {
   color: var(--accent);
   transform: translateX(6px);
-  transition: transform .18s ease, color .18s ease;
 }
 
-/* Sidebar → top nav on smaller screens */
+/* Desktop → Fixed Sidebar */
+@media (min-width: 992px) {
+  #navbar-custom {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;         /* full screen height */
+    overflow-y: auto;      /* scroll inside if items overflow */
+    z-index: 1000;
+  }
+  .main-content {
+    margin-left: 220px;    /* keep content next to sidebar */
+  }
+}
+
+/* Mobile → Top Nav */
 @media (max-width: 991px) {
   body { flex-direction: column; }
   #navbar-custom {
+    position: relative;
     width: 100%;
     height: auto;
     flex-direction: row;
@@ -272,7 +290,7 @@ section {
 /* ===========================
    Employment History
    =========================== */
-.timeline-heading h3{
+.timeline-heading h3 {
   font-size: 20px;
   font-weight: 600;
   color: var(--accent-dark);
