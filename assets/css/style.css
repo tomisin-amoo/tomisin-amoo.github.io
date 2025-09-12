@@ -1,5 +1,5 @@
 /* ===========================
-   Theme variables
+   Theme Variables
    =========================== */
 :root {
   --accent: #00bcd4;
@@ -12,38 +12,48 @@
   --max-page-width: 1100px;
 }
 
-/* =========================================
+/* ===========================
    Reset + Global
-   ========================================= */
+   =========================== */
 * { box-sizing: border-box; }
 html, body { height: 100%; margin: 0; padding: 0; }
+
 body {
   font-family: "Roboto", "Lato", sans-serif;
   font-size: 16px;
   color: var(--text);
   background: var(--bg);
   line-height: 1.5;
-  display: flex; /* <-- sidebar + content */
+  display: flex; /* sidebar + content */
 }
 
 a { color: var(--accent); text-decoration: none; }
 a:hover { text-decoration: underline; }
 
-h1,h2,h3,h4,h5 { margin: 0 0 .5rem 0; font-weight: 700; color: var(--text); }
+h1, h2, h3, h4, h5 {
+  margin: 0 0 .5rem 0;
+  font-weight: 700;
+  color: var(--text);
+}
 p { margin: 0 0 1rem 0; }
 
-.container { width: 100%; max-width: var(--max-page-width); margin: 0 auto; padding: 0 20px; }
+.container {
+  width: 100%;
+  max-width: var(--max-page-width);
+  margin: 0 auto;
+  padding: 0 20px;
+}
 
-/* =========================================
-   Sidebar (desktop) -> top nav (mobile)
-   ========================================= */
+/* ===========================
+   Sidebar Navigation
+   =========================== */
 #navbar-custom {
   width: 220px;
   background: var(--black);
   color: #fff;
-  flex-shrink: 0;          /* keep fixed width */
+  flex-shrink: 0;
   height: 100vh;
-  position: sticky;        /* stays pinned */
+  position: sticky;
   top: 0;
   display: flex;
   flex-direction: column;
@@ -61,6 +71,7 @@ p { margin: 0 0 1rem 0; }
   flex-direction: column;
   gap: 10px;
 }
+
 #main-navbar a {
   display: block;
   color: #fff;
@@ -68,6 +79,7 @@ p { margin: 0 0 1rem 0; }
   padding: 8px 10px;
   border-radius: 4px;
 }
+
 #main-navbar a:hover,
 #main-navbar a:focus {
   color: var(--accent);
@@ -75,13 +87,7 @@ p { margin: 0 0 1rem 0; }
   transition: transform .18s ease, color .18s ease;
 }
 
-/* Content wrapper */
-.main-content {
-  flex: 1;
-  overflow-x: hidden;
-}
-
-/* Sidebar turns into top nav on smaller screens */
+/* Sidebar → top nav on smaller screens */
 @media (max-width: 991px) {
   body { flex-direction: column; }
   #navbar-custom {
@@ -104,15 +110,30 @@ p { margin: 0 0 1rem 0; }
   #main-navbar a { padding: 6px 10px; font-size: 13px; }
 }
 
-/* =========================================
-   Sections
-   ========================================= */
-section { padding: 60px 0; }
-.section-title { font-size: 26px; margin-bottom: 28px; text-align: center; }
+/* ===========================
+   Section Styling
+   =========================== */
+section {
+  padding: 60px 0;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin-bottom: 40px;
+  background: #fff;
+}
 
-/* =========================================
+.section-title {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 40px;
+  text-align: center;
+  color: #222;
+  border-bottom: 2px solid var(--accent);
+  padding-bottom: 10px;
+}
+
+/* ===========================
    Hero Section
-   ========================================= */
+   =========================== */
 #home {
   min-height: 70vh;
   display: flex;
@@ -126,32 +147,145 @@ section { padding: 60px 0; }
 #home h1 { font-size: 38px; line-height: 1.05; margin-bottom: 14px; }
 #home p { color: var(--muted); font-size: 16px; margin-bottom: 18px; }
 
-.hero-photo { width: 140px; height: 140px; border-radius: 50%; object-fit: cover; margin: 0 auto 16px; }
+.hero-photo {
+  width: 140px; height: 140px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 0 auto 16px;
+}
 
-.hero-buttons { display: flex; gap: 12px; justify-content: center; margin-top: 18px; flex-wrap: wrap; }
-.hero-buttons .btn { padding: 9px 16px; border-radius: 6px; font-weight: 600; text-decoration: none; }
+.hero-buttons {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  margin-top: 18px;
+  flex-wrap: wrap;
+}
+.hero-buttons .btn {
+  padding: 9px 16px;
+  border-radius: 6px;
+  font-weight: 600;
+  text-decoration: none;
+}
 .btn-primary { background: var(--accent); color: #fff; }
 .btn-primary:hover { background: var(--accent-dark); }
 .btn-secondary { background: #0077b5; color: #fff; }
 .btn-github { background: #333; color: #fff; }
 
-/* =========================================
+/* ===========================
    Resume / Projects / Skills
-   ========================================= */
-.resume-item { background: var(--panel); padding: 18px; border-left: 4px solid var(--accent); margin-bottom: 18px; border-radius: 4px; }
-.project-card { background: #fff; border: 1px solid #e6e6e6; padding: 16px; border-radius: 6px; }
+   =========================== */
+.resume-item {
+  background: var(--panel);
+  padding: 18px;
+  border-left: 4px solid var(--accent);
+  margin-bottom: 18px;
+  border-radius: 4px;
+}
+.resume-item ul {
+  margin: 10px 0 0 20px;
+  padding: 0;
+  list-style: disc;
+}
+.resume-item li {
+  margin-bottom: 5px;
+  line-height: 1.5;
+}
+
+.project-card {
+  background: #fff;
+  border: 1px solid #e6e6e6;
+  padding: 16px;
+  border-radius: 6px;
+}
+
 .skill-progress { margin-bottom: 14px; }
-.skill-title { display: flex; align-items: center; gap: 8px; font-weight: 600; color: #333; margin-bottom: 8px; }
-.progress { background: #eee; height: 10px; border-radius: 8px; overflow: hidden; }
-.progress-bar { width: 0; height: 100%; background: linear-gradient(90deg, var(--accent), var(--accent-dark)); transition: width 1.2s ease; border-radius: 8px; }
+.skill-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 8px;
+}
 
-/* =========================================
+/* Progress Bars */
+.progress {
+  height: 8px;
+  background: #eee;
+  border-radius: 4px;
+  overflow: hidden;
+}
+.progress-bar {
+  width: 0; /* animated via JS */
+  height: 100%;
+  background: var(--accent);
+  border-radius: 4px;
+  transition: width 1.5s ease-in-out;
+}
+
+/* ===========================
    Profile Photo
-   ========================================= */
-.profile-photo { width: 250px; max-width: 100%; height: auto; border-radius: 8px; object-fit: cover; margin: 0 auto 18px; }
+   =========================== */
+.profile-photo {
+  width: 250px;
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  object-fit: cover;
+  margin: 0 auto 18px;
+}
 
-/* =========================================
+/* ===========================
    Footer
-   ========================================= */
-.footer-wrapper { background: var(--black); color: #aaa; padding: 20px 0; font-size: 14px; text-align: center; }
+   =========================== */
+.footer-wrapper {
+  background: var(--black);
+  color: #aaa;
+  padding: 20px 0;
+  font-size: 14px;
+  text-align: center;
+}
 .footer-wrapper a { color: var(--accent); }
+
+/* ===========================
+   Scopes List
+   =========================== */
+#scopes ul.list-check {
+  list-style: none;
+  padding-left: 0;
+  margin-left: 0;
+}
+#scopes ul.list-check li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  font-size: 16px;
+  color: #333;
+}
+#scopes ul.list-check li i {
+  color: var(--accent);
+  margin-right: 8px;
+  font-size: 14px;
+}
+
+/* ===========================
+   Employment History
+   =========================== */
+.timeline-heading h3{
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--accent-dark);
+  margin-bottom: 5px;
+}
+.panel-body.timeline-body ul {
+  list-style-type: disc !important;
+  padding-left: 20px !important;
+  margin-left: 0;
+}
+.panel-body.timeline-body li {
+  display: list-item !important;
+  margin-bottom: 6px;
+  line-height: 1.5;
+  color: #333;
+}
